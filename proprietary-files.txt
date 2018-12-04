@@ -25,7 +25,7 @@ etc/permissions/privapp-permissions-com.qualcomm.location.xml
 etc/permissions/privapp-permissions-qti.xml
 etc/permissions/privapp-permissions-oem.xml
 etc/permissions/qcrilhook.xml
-etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 etc/permissions/LteDirectDiscovery.xml
 etc/permissions/RemoteSimlock.xml
@@ -155,7 +155,6 @@ lib64/extractors/libmmparser.so
 #-lib64/hw/hwcomposer.qcom.so|112747a053fd3408eccae5748917a60b3a569668
 lib64/libadsprpc_system.so
 lib64/libmdsprpc_system.so
-lib64/libantradio.so
 lib64/libaptX_encoder.so
 lib64/libaptXHD_encoder.so
 lib64/libbluetooth_qti.so
@@ -296,7 +295,6 @@ lib/com.qualcomm.qti.wifidisplayhal@1.0.so
 lib/extractors/libmmparser.so
 lib/libadsprpc_system.so
 lib/libmdsprpc_system.so
-lib/libantradio.so
 lib/libbluetooth_qti.so
 lib/libblurbuster.so
 lib/libcdsprpc_system.so
@@ -415,8 +413,6 @@ lib/vendor.qti.imsrtpservice@1.0.so
 lib/vendor.qti.voiceprint@1.0.so
 -priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
 -priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk
--sbin/dashd;rootfs
-
 
 etc/voicemail-conf.xml
 etc/nfc_card_config.conf
@@ -429,6 +425,7 @@ lib64/libCalibrationJNI.so
 
 lib/libnl.so
 lib/libwfduibcsrcinterface.so
+lib/antradio.so
 lib/libwfdmmsink.so
 lib/libwfduibcsinkinterface.so
 lib/libwfdmminterface.so
@@ -448,6 +445,7 @@ lib/libwfdservice.so
 lib/libwfdavenhancements.so
 lib/libwfdmmsrc.so
 lib64/libwfdclient.so
+lib64/libantradio.so
 lib64/libwfdnative.so
 
 etc/qvr/qvrservice_config.txt
@@ -494,3 +492,4 @@ lib/libnxpnfc-nci.so
 lib64/vendor.nxp.nxpnfc@1.0.so
 lib/vendor.nxp.nxpnfc@1.0.so
 etc/nfcee_access.xml
+

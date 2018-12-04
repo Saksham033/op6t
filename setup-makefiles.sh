@@ -19,7 +19,7 @@
 set -e
 
 # Required!
-DEVICE=oneplus6
+DEVICE=fajita
 VENDOR=oneplus
 
 INITIAL_COPYRIGHT_YEAR=2018
@@ -30,7 +30,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 CM_ROOT="$MY_DIR"/../../..
 
-HELPER="$CM_ROOT"/vendor/omni/build/tools/extract_utils.sh
+HELPER="$CM_ROOT"/vendor/aosp/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -41,7 +41,7 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 
 # Copyright headers and guards
-write_headers "oneplus6"
+write_headers "fajita"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt

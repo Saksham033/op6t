@@ -19,10 +19,8 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-$(call inherit-product, vendor/oneplus/oneplus6/device-vendor.mk)
+$(call inherit-product, vendor/oneplus/fajita/fajita-vendor.mk)
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
-$(call inherit-product, vendor/omni/config/phone-xxhdpi-4096-dalvik-heap.mk)
-$(call inherit-product, vendor/omni/config/phone-xxhdpi-2048-hwui-memory.mk)
 
 #from build treble includes
 PRODUCT_COPY_FILES += \
@@ -73,9 +71,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-PRODUCT_PACKAGES += \
-    omni_charger_res_images
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
@@ -136,8 +131,8 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/oneplus/oneplus6/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/oneplus/oneplus6/prebuilt/root,root)
+    $(call find-copy-subdir-files,*,device/oneplus/fajita/prebuilt/system,system) \
+    $(call find-copy-subdir-files,*,device/oneplus/fajita/prebuilt/root,root)
 
 
 PRODUCT_AAPT_CONFIG := xxhdpi
@@ -150,8 +145,8 @@ PRODUCT_PACKAGES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/oneplus/oneplus6/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
-    device/oneplus/oneplus6/keylayout/gf_input.kl:system/usr/keylayout/gf_input.kl
+    device/oneplus/fajita/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
+    device/oneplus/fajita/keylayout/gf_input.kl:system/usr/keylayout/gf_input.kl
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -272,8 +267,9 @@ PRODUCT_PACKAGES += android.hardware.health@2.0-service.oneplus6
 DEVICE_FRAMEWORK_MANIFEST_FILE += \
     system/libhidl/vintfdata/manifest_healthd_exclude.xml
 
+# Telephony
 PRODUCT_PACKAGES += \
-    OmniDisplayManager
+    telephony-ext
 
 # Temporary handling
 #
@@ -281,8 +277,8 @@ PRODUCT_PACKAGES += \
 # does not exist as they are mutually exclusive.  Once all target's android_filesystem_config.h
 # have been removed, TARGET_FS_CONFIG_GEN should be made unconditional.
 DEVICE_CONFIG_DIR := $(dir $(firstword $(subst ]],, $(word 2, $(subst [[, ,$(_node_import_context))))))
-ifeq ($(wildcard device/oneplus/oneplus6/android_filesystem_config.h),)
-  TARGET_FS_CONFIG_GEN := device/oneplus/oneplus6/config.fs
+ifeq ($(wildcard device/oneplus/fajita/android_filesystem_config.h),)
+  TARGET_FS_CONFIG_GEN := device/oneplus/fajita/config.fs
 else
   $(warning **********)
   $(warning TODO: Need to replace legacy $(DEVICE_CONFIG_DIR)android_filesystem_config.h with config.fs)
